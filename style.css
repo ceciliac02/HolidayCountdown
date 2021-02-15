@@ -1,0 +1,48 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    background-image: url(space.jpg);
+    background-size: 100%;
+}
+
+    header h1 {
+        color: white;
+    }
+
+#breakContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 3vh;
+}
+
+.mainBodyContainer {
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+}
+
+#dropdownContainer {
+    background-color: black;
+    color: white;
+    height: 100%;
+    padding: 30px;
+}
+
+.countdownBody {
+    background-color: aliceblue;
+    height: 100%;
+    padding: 30px;
+    width: 100%;
+}
