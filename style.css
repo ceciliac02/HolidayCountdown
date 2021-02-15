@@ -1,6 +1,7 @@
 ﻿body {
     margin: 0;
     padding: 0;
+    font-family: Verdana, sans-serif;
 }
 
 header {
@@ -37,12 +38,24 @@ header {
     background-color: black;
     color: white;
     height: 100%;
-    padding: 30px;
+    padding-right: 50px;
 }
 
+#list li {
+    border: 2px black solid;
+    list-style: none;
+    padding: 2vh;
+    background-color: rgb(0, 14, 64);
+    text-align: center;
+}
+
+    #list li:hover {
+        background-color: rgb(49, 74, 123)
+    }
+
 .countdownBody {
-    background-color: aliceblue;
+    background-color: rgba(255, 255, 255, .5);
     height: 100%;
-    padding: 30px;
-    width: 100%;
+    padding: 5vh;
+    width: 80%;
 }
