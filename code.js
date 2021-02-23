@@ -24,6 +24,17 @@
 	holidayHTML.push("Thanksgiving");
 	holidayHTML.push("Christmas");
 
+	let images = [];
+	images.push('holidayImages/newyears.jpg');
+	images.push('holidayImages/valentines.jpg');
+	images.push('holidayImages/patricks.jpg');
+	images.push('holidayImages/easter.jpg');
+	images.push('holidayImages/cinco.jpg');
+	images.push('holidayImages/july.jpg');
+	images.push('holidayImages/halloween.jpg');
+	images.push('holidayImages/thanksgiving.jpg');
+	images.push('holidayImages/christmas.jpg');
+
 	//Setting holiday dates
 	const newYearsDate = new Date(2022, 0, 1, 0, 0, 0, 0);
 	const valentineDate = new Date(2022, 1, 14, 0, 0, 0, 0);
@@ -47,6 +58,7 @@
 		holidayArray[i].addEventListener('click', function () {
 			for (let j = 0; j < holidayDates.length; j++) {
 				clearTimeout(holidayTimer);
+				document.querySelector(".mainBodyContainer").style.backgroundImage = "url(" + images[i] + ")";
 				holidayBanner.innerHTML = holidayHTML[i];
 				countdownBody.innerHTML = "Loading...";
 				holidayTimer = setInterval(function () { countdownBody.innerHTML = timeRemaining(holidayDates[i]) }, 1000);
