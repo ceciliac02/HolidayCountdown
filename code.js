@@ -35,16 +35,20 @@
 	images.push('holidayImages/thanksgiving.jpg');
 	images.push('holidayImages/christmas.jpg');
 
+	//Sets the current time
+	const currentTime = new Date();
+	const currentYear = currentTime.getFullYear();
+
 	//Setting holiday dates
-	const newYearsDate = new Date(2022, 0, 1, 0, 0, 0, 0);
-	const valentineDate = new Date(2022, 1, 14, 0, 0, 0, 0);
-	const patrickDate = new Date (2021, 2, 17, 0, 0, 0, 0);
-	const easterDate = new Date(2021, 3, 4, 0, 0, 0, 0);
-	const mayoDate = new Date(2021, 4, 5, 0, 0, 0, 0);
-	const julyDate = new Date(2021, 6, 5, 0, 0, 0, 0);
-	const hallowDate = new Date(2021, 9, 31, 0, 0, 0, 0);
-	const thanksDate = new Date(2021, 10, 25, 0, 0, 0, 0);
-	const christmasDate = new Date(2021, 11, 24, 0, 0, 0, 0);
+	const newYearsDate = new Date(currentYear, 0, 1, 0, 0, 0, 0);
+	const valentineDate = new Date(currentYear, 1, 14, 0, 0, 0, 0);
+	const patrickDate = new Date (currentYear, 2, 17, 0, 0, 0, 0);
+	const easterDate = new Date(currentYear, 3, 4, 0, 0, 0, 0);
+	const mayoDate = new Date(currentYear, 4, 5, 0, 0, 0, 0);
+	const julyDate = new Date(currentYear, 6, 5, 0, 0, 0, 0);
+	const hallowDate = new Date(currentYear, 9, 31, 0, 0, 0, 0);
+	const thanksDate = new Date(currentYear, 10, 25, 0, 0, 0, 0);
+	const christmasDate = new Date(currentYear, 11, 24, 0, 0, 0, 0);
 
 	const holidayDates = [newYearsDate, valentineDate, patrickDate, easterDate, mayoDate, julyDate, hallowDate, thanksDate, christmasDate];
 
@@ -68,7 +72,6 @@
 
 	//Sets the amount of time remaining until the holiday and outputs the time
 	function timeRemaining (holiday) {
-		const currentTime = new Date();
 		const currentMilliseconds = currentTime.getTime();
 		const holidayMilliseconds = holiday.getTime();
 		let millisecondsRemaining = holidayMilliseconds - currentMilliseconds;
@@ -76,6 +79,11 @@
 		let hoursRemaining = 23 - currentTime.getHours();
 		let minutesRemaining = 59 - currentTime.getMinutes();
 		let secondsRemaining = 59 - currentTime.getSeconds();
+
+		if (daysRemaining < 0) {
+			daysRemaining = daysRemaining + 365;
+		}
+		
 		return `${daysRemaining} day(s) ${hoursRemaining} hour(s) ${minutesRemaining} minute(s) ${secondsRemaining} second(s) left`;
 	}
 
